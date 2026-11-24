@@ -150,8 +150,8 @@
               <p class="project-card__pitch">An AI security reviewer that flags vulnerabilities on the exact line of a GitHub pull request.</p>
 
               <ul class="project-card__highlights">
-                <li>Tuned the Claude review pipeline in Go for deterministic, calibrated, deduplicated findings.</li>
-                <li>Deployed the Go server to Fly.io with Docker and secure private-key loading.</li>
+                <li>Tuned the Claude review pipeline in Go, cutting false-positive findings by about 40%.</li>
+                <li>Built the HMAC-verified GitHub webhook pipeline on Google Cloud Run with PostgreSQL (Neon).</li>
                 <li>Built dashboard UI improvements in Next.js, including a resizable sidebar.</li>
               </ul>
 
@@ -161,9 +161,9 @@
                 <li class="tag">Next.js</li>
                 <li class="tag">React</li>
                 <li class="tag">TypeScript</li>
-                <li class="tag">Postgres</li>
-                <li class="tag">Docker</li>
-                <li class="tag">Fly.io</li>
+                <li class="tag">PostgreSQL (Neon)</li>
+                <li class="tag">Google Cloud Run</li>
+                <li class="tag">Vercel</li>
                 <li class="tag">GitHub Apps</li>
               </ul>
 
@@ -183,17 +183,17 @@
               <p>Built at GDG Hacks 2026, a 24-hour hackathon at the University of Guelph in May 2026 with about 130 students from across Ontario, as a team of four.</p>
 
               <h4>How it works</h4>
-              <p>When a pull request is opened or updated, GitHub sends a signed webhook to a Go server. The server verifies the signature, uses AST-aware chunking to pull out only the functions the PR changed, and sends each one to Claude for a security review. Findings are posted back as inline PR comments and GitHub Check Run annotations on the exact line, and shown in a live Next.js dashboard with severity, CWE, file and line.</p>
+              <p>When a pull request is opened or updated, GitHub sends a signed webhook to a Go server running on Google Cloud Run. The server verifies the HMAC signature, uses AST-aware chunking to pull out only the functions the PR changed, and sends each one to Claude for a security review. Findings are stored in PostgreSQL (Neon) and posted back as inline PR comments and GitHub Check Run annotations on the exact line. A live Next.js dashboard on Vercel shows each finding's severity, CWE, file and line, with severity filtering, false-positive dismissal and real-time alerts for critical and high-severity issues.</p>
 
               <ol class="flow" role="list" aria-label="ResolvePR flow">
                 <li class="flow__step"><span class="flow__num">1</span><span class="flow__label">PR opened</span><span class="flow__note">or updated</span></li>
                 <li class="flow__step"><span class="flow__num">2</span><span class="flow__label">Webhook</span><span class="flow__note">signed by GitHub</span></li>
-                <li class="flow__step"><span class="flow__num">3</span><span class="flow__label">Go server</span><span class="flow__note">verify + AST chunking</span></li>
+                <li class="flow__step"><span class="flow__num">3</span><span class="flow__label">Go server</span><span class="flow__note">Cloud Run: verify + AST chunking</span></li>
                 <li class="flow__step"><span class="flow__num">4</span><span class="flow__label">Claude review</span><span class="flow__note">one call per function</span></li>
                 <li class="flow__step flow__step--out">
                   <span class="flow__num">5</span>
                   <span class="flow__out"><span class="flow__label">PR comments</span><span class="flow__note">+ Check Run annotations</span></span>
-                  <span class="flow__out"><span class="flow__label">Dashboard</span><span class="flow__note">live, in Next.js</span></span>
+                  <span class="flow__out"><span class="flow__label">Dashboard</span><span class="flow__note">live, Next.js on Vercel</span></span>
                 </li>
               </ol>
 
@@ -201,7 +201,8 @@
               <ul>
                 <li>Tuned the Claude review pipeline in Go: deterministic output (temperature 0), prompt caching, XML-structured inputs, a calibrated 4-level confidence scale and a few-shot example.</li>
                 <li>Added retry with exponential backoff on rate limits, plus validation that deduplicates findings and drops incomplete ones.</li>
-                <li>Deployed the Go server to Fly.io: wrote the Dockerfile and set up secure private-key loading.</li>
+                <li>Designed automated tests and API guardrails and tuned confidence thresholds, cutting false-positive findings by about 40%.</li>
+                <li>Built the HMAC-verified GitHub webhook pipeline on Google Cloud Run with PostgreSQL (Neon).</li>
                 <li>Built UI improvements to the Next.js dashboard, including a resizable sidebar.</li>
               </ul>
             </div>
@@ -219,8 +220,8 @@
               <p class="project-card__pitch">Works out the bolt length a joint needs, rounded up to the next 1/4&Prime;.</p>
 
               <ul class="project-card__highlights">
-                <li>Enter each part and washer (flat and bevel), pick a diameter from 1/2&Prime; to 1&Prime;, and get the length.</li>
-                <li>Saves the last 7 results in the browser, with delete and undo.</li>
+                <li>Enter each part and washer (flat and bevel) and pick a diameter from 1/2&Prime; to 1&Prime;, with input validation on every field.</li>
+                <li>Saves the last 7 results with delete and undo, and graphs length trends with Chart.js.</li>
                 <li>Deploys automatically to GitHub Pages with GitHub Actions.</li>
               </ul>
 
@@ -230,6 +231,7 @@
                 <li class="tag">JavaScript</li>
                 <li class="tag">Sass</li>
                 <li class="tag">Materialize CSS</li>
+                <li class="tag">Chart.js</li>
                 <li class="tag">localStorage</li>
                 <li class="tag">GitHub Actions</li>
               </ul>
@@ -249,8 +251,8 @@
 
             <div class="project-card__more" id="bolt-more">
               <h4>How it works</h4>
-              <p>You enter the thickness and quantity of each part and washer, flat and bevel, and pick a bolt diameter from 1/2&Prime; to 1&Prime;. The app adds a nut-and-thread allowance based on the diameter and rounds the total up to the next 1/4&Prime;.</p>
-              <p>The last 7 results are saved in the browser with localStorage, and you can delete a result and undo the delete. Every push to main builds and deploys the app to GitHub Pages through a GitHub Actions workflow.</p>
+              <p>You enter the thickness and quantity of each part and washer, flat and bevel, and pick a bolt diameter from 1/2&Prime; to 1&Prime;. The app adds a nut-and-thread allowance based on the diameter and rounds the total up to the next 1/4&Prime;. Input validation guides you through the multi-field form so a bad value can't slip into the total.</p>
+              <p>The last 7 results are saved in the browser with localStorage, and you can delete a result and undo the delete. A Chart.js graph shows how the calculated lengths trend over time. Every push to main builds and deploys the app to GitHub Pages through a GitHub Actions workflow.</p>
             </div>
           </article>
 

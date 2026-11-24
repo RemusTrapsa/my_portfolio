@@ -45,7 +45,6 @@ python -m http.server 8000   # then open http://localhost:8000
 | What | Where |
 |---|---|
 | **Resume** | Save your PDF as `resume.pdf` in the **root** of the repo (next to `index.html`). Both "Download resume" buttons point to it and save it as `Remus_Trapsa_Resume.pdf`. |
-| **LinkedIn URL** | In `index.html`, search for `TODO(LinkedIn)`. There are two links; replace `https://www.linkedin.com/in/your-handle/` in both. |
 | **ResolvePR repo** | Search for `TODO(ResolvePR repo)`, uncomment the `<a>` and delete the "Repo coming soon" `<span>`. |
 | **Screenshots** | Add `assets/img/projects/resolvepr.png` and `assets/img/projects/bolt-calculator.png`. Until a file exists, the card shows a pixel placeholder automatically. |
 

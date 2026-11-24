@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Design tokens
+   Every color, size and timing used on the site lives here.
+   Change a value once and it updates everywhere.
+   ========================================================================== */
+
+:root{
+  /* ---- Color: surfaces ---- */
+  --color-bg:            #0c0b10;
+  --color-surface:       #14131b;
+  --color-surface-2:     #1c1a26;
+  --color-border:        #2b2838;
+  --color-border-strong: #3d3950;
+
+  /* ---- Color: text ---- */
+  --color-text:          #ebe8f4; /* 16.2:1 on bg (WCAG AAA) */
+  --color-text-muted:    #a5a0b8; /*  7.8:1 on bg (AAA) */
+  --color-text-subtle:   #8a85a0; /*  5.6:1 on bg (AA); min 4.85:1 on surface-2 */
+
+  /* ---- Color: accent (electric violet) ---- */
+  --color-accent:        #a78bfa; /*  7.2:1 on bg (AAA) */
+  --color-accent-strong: #c4b5fd;
+  --color-accent-dim:    #6d4fd8;
+  --color-accent-ink:    #0c0b10; /* text on accent fills */
+  --color-accent-glow:   rgb(167 139 250 / 0.18);
+
+  /* ---- Color: secondary pixel accents (used sparingly) ---- */
+  --color-pixel-green:   #4ade80;
+  --color-pixel-amber:   #fbbf24;
+  --color-pixel-red:     #f87171;
+
+  /* ---- Typography ---- */
+  --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Cascadia Code", "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+
+  /* Type scale (~1.25 ratio) */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-md:   1.125rem;
+  --text-lg:   1.375rem;
+  --text-xl:   1.75rem;
+  --text-2xl:  clamp(1.75rem, 1.2rem + 2.4vw, 2.5rem);
+  --text-3xl:  clamp(2.5rem, 1.6rem + 4.5vw, 4.25rem);
+
+  --leading-tight: 1.15;
+  --leading-snug:  1.35;
+  --leading-body:  1.65;
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-bold:    700;
+
+  /* ---- Spacing (4px base) ---- */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.5rem;
+  --space-6:  2rem;
+  --space-7:  3rem;
+  --space-8:  4rem;
+  --space-9:  6rem;
+
+  /* ---- Radii (kept small: pixel-ish, not pill-shaped) ---- */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* ---- Pixel accents ---- */
+  --pixel: 4px;                 /* size of one "pixel" in decorative details */
+  --shadow-pixel: var(--pixel) var(--pixel) 0 0 var(--color-accent-dim);
+  --shadow-pixel-hover: calc(var(--pixel) * 1.5) calc(var(--pixel) * 1.5) 0 0 var(--color-accent-dim);
+
+  /* ---- Layout ---- */
+  --container-max: 68rem;
+  --container-pad: var(--space-4);
+  --header-height: 3.75rem;
+
+  /* ---- Motion ---- */
+  --ease-out:      cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-base: 220ms;
+  --steps-pixel:   steps(4, end); /* chunky, game-like transitions */
+}
+
+@media (min-width: 48rem){
+  :root{
+    --container-pad: var(--space-6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  :root{
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+  }
+}

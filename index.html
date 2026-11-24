@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Remus Trapsa · Front-end &amp; UI Developer</title>
+  <meta name="description" content="Remus Trapsa is a Computer Science co-op student at the University of Guelph building clean, accessible interfaces. Seeking Winter 2027 co-op roles in front-end, UX/UI and design systems.">
+  <meta name="author" content="Remus Trapsa">
+  <meta name="theme-color" content="#0c0b10">
+  <meta name="color-scheme" content="dark">
+
+  <!-- SITE_URL: switch these from the github.io address to https://remustrapsa.com/ once the domain is live (see README) -->
+  <link rel="canonical" href="https://remustrapsa.github.io/my_portfolio/">
+
+  <!-- Open Graph (LinkedIn, Discord, Slack, Facebook) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Remus Trapsa">
+  <meta property="og:title" content="Remus Trapsa · Front-end &amp; UI Developer">
+  <meta property="og:description" content="CS co-op student at the University of Guelph building clean, accessible interfaces, and the occasional game. Seeking Winter 2027 co-op.">
+  <meta property="og:url" content="https://remustrapsa.github.io/my_portfolio/">
+  <meta property="og:image" content="https://remustrapsa.github.io/my_portfolio/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Remus Trapsa, Front-end and UI Developer, with a pixel-art accent">
+  <meta property="og:locale" content="en_CA">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Remus Trapsa · Front-end &amp; UI Developer">
+  <meta name="twitter:description" content="CS co-op student at the University of Guelph building clean, accessible interfaces, and the occasional game.">
+  <meta name="twitter:image" content="https://remustrapsa.github.io/my_portfolio/assets/img/og-image.png">
+
+  <!-- Icons -->
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <!-- Styles: tokens first, then base, layout, components -->
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <!-- Icon sprite: reference with <svg><use href="#icon-name"></use></svg> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="icon-github" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+    </symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/>
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" d="M3 5h18v14H3zM3 6l9 7 9-7"/>
+    </symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" d="M12 3v12M7 10l5 5 5-5M4 20h16"/>
+    </symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/>
+    </symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M7 4h2v2h2v2h2v2h2v4h-2v2h-2v2H9v2H7Z"/>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="#top" aria-label="Remus Trapsa, back to top">
+        <img class="logo__mark" src="assets/img/favicon.svg" width="28" height="28" alt="">
+        <span class="logo__text">remus<span class="logo__dot">_</span>trapsa</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav" role="list">
+          <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================================================================
+         HERO
+         ================================================================ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <p class="hero__eyebrow"><span class="prompt" aria-hidden="true">&gt;</span> player_one.init()</p>
+        <h1 class="hero__title" id="hero-title">Remus Trapsa<span class="cursor" aria-hidden="true"></span></h1>
+        <p class="hero__role">Front-end &amp; UI Developer</p>
+        <p class="hero__intro">Computer Science co-op student at the University of Guelph building clean, accessible interfaces, and the occasional game.</p>
+
+        <p class="status">
+          <span class="status__dot" aria-hidden="true"></span>
+          <span>Open to <strong>Winter 2027 co-op</strong> roles in front-end, UX/UI &amp; design systems</span>
+        </p>
+
+        <div class="button-row">
+          <a class="button button--primary" href="resume.pdf" download="Remus_Trapsa_Resume.pdf">
+            <svg class="icon" aria-hidden="true"><use href="#icon-download"></use></svg>
+            Download resume
+          </a>
+          <a class="button" href="https://github.com/RemusTrapsa" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>
+            GitHub<span class="visually-hidden"> (opens in a new tab)</span>
+          </a>
+          <!-- TODO(LinkedIn): replace your-handle with your LinkedIn URL -->
+          <a class="button" href="https://www.linkedin.com/in/your-handle/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#icon-linkedin"></use></svg>
+            LinkedIn<span class="visually-hidden"> (opens in a new tab)</span>
+          </a>
+          <a class="button" href="mailto:rtrapsa@uoguelph.ca">
+            <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
+            Email
+          </a>
+        </div>
+
+        <div class="hero__pixels" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         PROJECTS
+         To add a project: copy one <article class="project-card"> block,
+         give it a unique id prefix, and edit the content. See README.
+         ================================================================ -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__label" aria-hidden="true">01</p>
+          <h2 class="section__title" id="projects-title">Projects</h2>
+        </header>
+
+        <div class="project-list">
+
+          <!-- ---------------- Project: ResolvePR ---------------- -->
+          <article class="project-card" aria-labelledby="resolvepr-title">
+            <figure class="project-card__media" data-placeholder="Screenshot coming soon">
+              <img src="assets/img/projects/resolvepr.png" alt="ResolvePR dashboard listing security findings by severity, CWE, file and line" width="1280" height="800" loading="lazy" decoding="async">
+            </figure>
+
+            <div class="project-card__body">
+              <p class="project-card__meta">GDG Hacks 2026 · 24-hour hackathon · Team of 4</p>
+              <h3 class="project-card__title" id="resolvepr-title">ResolvePR</h3>
+              <p class="project-card__pitch">An AI security reviewer that flags vulnerabilities on the exact line of a GitHub pull request.</p>
+
+              <ul class="project-card__highlights">
+                <li>Tuned the Claude review pipeline in Go for deterministic, calibrated, deduplicated findings.</li>
+                <li>Deployed the Go server to Fly.io with Docker and secure private-key loading.</li>
+                <li>Built dashboard UI improvements in Next.js, including a resizable sidebar.</li>
+              </ul>
+
+              <ul class="tag-list" role="list" aria-label="Tech used">
+                <li class="tag">Go</li>
+                <li class="tag">Claude API</li>
+                <li class="tag">Next.js</li>
+                <li class="tag">React</li>
+                <li class="tag">TypeScript</li>
+                <li class="tag">Postgres</li>
+                <li class="tag">Docker</li>
+                <li class="tag">Fly.io</li>
+                <li class="tag">GitHub Apps</li>
+              </ul>
+
+              <div class="project-card__actions">
+                <button class="button button--small" type="button" data-expand="resolvepr-more" aria-controls="resolvepr-more" aria-expanded="true" hidden>Read more</button>
+                <!-- TODO(ResolvePR repo): when the repo is public, replace this span with:
+                <a class="button button--small" href="https://github.com/RemusTrapsa/REPO" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>
+                  View code<span class="visually-hidden"> (opens in a new tab)</span>
+                </a> -->
+                <span class="button button--small button--disabled" aria-disabled="true">Repo coming soon</span>
+              </div>
+            </div>
+
+            <div class="project-card__more" id="resolvepr-more">
+              <h4>The event</h4>
+              <p>Built at GDG Hacks 2026, a 24-hour hackathon at the University of Guelph in May 2026 with about 130 students from across Ontario, as a team of four.</p>
+
+              <h4>How it works</h4>
+              <p>When a pull request is opened or updated, GitHub sends a signed webhook to a Go server. The server verifies the signature, uses AST-aware chunking to pull out only the functions the PR changed, and sends each one to Claude for a security review. Findings are posted back as inline PR comments and GitHub Check Run annotations on the exact line, and shown in a live Next.js dashboard with severity, CWE, file and line.</p>
+
+              <ol class="flow" role="list" aria-label="ResolvePR flow">
+                <li class="flow__step"><span class="flow__num">1</span><span class="flow__label">PR opened</span><span class="flow__note">or updated</span></li>
+                <li class="flow__step"><span class="flow__num">2</span><span class="flow__label">Webhook</span><span class="flow__note">signed by GitHub</span></li>
+                <li class="flow__step"><span class="flow__num">3</span><span class="flow__label">Go server</span><span class="flow__note">verify + AST chunking</span></li>
+                <li class="flow__step"><span class="flow__num">4</span><span class="flow__label">Claude review</span><span class="flow__note">one call per function</span></li>
+                <li class="flow__step flow__step--out">
+                  <span class="flow__num">5</span>
+                  <span class="flow__out"><span class="flow__label">PR comments</span><span class="flow__note">+ Check Run annotations</span></span>
+                  <span class="flow__out"><span class="flow__label">Dashboard</span><span class="flow__note">live, in Next.js</span></span>
+                </li>
+              </ol>
+
+              <h4>My role</h4>
+              <ul>
+                <li>Tuned the Claude review pipeline in Go: deterministic output (temperature 0), prompt caching, XML-structured inputs, a calibrated 4-level confidence scale and a few-shot example.</li>
+                <li>Added retry with exponential backoff on rate limits, plus validation that deduplicates findings and drops incomplete ones.</li>
+                <li>Deployed the Go server to Fly.io: wrote the Dockerfile and set up secure private-key loading.</li>
+                <li>Built UI improvements to the Next.js dashboard, including a resizable sidebar.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- ---------------- Project: Bolt Length Calculator ---------------- -->
+          <article class="project-card" aria-labelledby="bolt-title">
+            <figure class="project-card__media" data-placeholder="Screenshot coming soon">
+              <img src="assets/img/projects/bolt-calculator.png" alt="Bolt Length Calculator form with part thicknesses, washer counts and a bolt diameter selector" width="1280" height="800" loading="lazy" decoding="async">
+            </figure>
+
+            <div class="project-card__body">
+              <p class="project-card__meta">Personal project · React app</p>
+              <h3 class="project-card__title" id="bolt-title">Bolt Length Calculator</h3>
+              <p class="project-card__pitch">Works out the bolt length a joint needs, rounded up to the next 1/4&Prime;.</p>
+
+              <ul class="project-card__highlights">
+                <li>Enter each part and washer (flat and bevel), pick a diameter from 1/2&Prime; to 1&Prime;, and get the length.</li>
+                <li>Saves the last 7 results in the browser, with delete and undo.</li>
+                <li>Deploys automatically to GitHub Pages with GitHub Actions.</li>
+              </ul>
+
+              <ul class="tag-list" role="list" aria-label="Tech used">
+                <li class="tag">React 18</li>
+                <li class="tag">TypeScript</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">Sass</li>
+                <li class="tag">Materialize CSS</li>
+                <li class="tag">localStorage</li>
+                <li class="tag">GitHub Actions</li>
+              </ul>
+
+              <div class="project-card__actions">
+                <a class="button button--primary button--small" href="https://remustrapsa.github.io/Calculating-Bolt-Length/" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true"><use href="#icon-play"></use></svg>
+                  Try it live<span class="visually-hidden"> (opens in a new tab)</span>
+                </a>
+                <a class="button button--small" href="https://github.com/RemusTrapsa/Calculating-Bolt-Length" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>
+                  View code<span class="visually-hidden"> (opens in a new tab)</span>
+                </a>
+                <button class="button button--small" type="button" data-expand="bolt-more" aria-controls="bolt-more" aria-expanded="true" hidden>Read more</button>
+              </div>
+            </div>
+
+            <div class="project-card__more" id="bolt-more">
+              <h4>How it works</h4>
+              <p>You enter the thickness and quantity of each part and washer, flat and bevel, and pick a bolt diameter from 1/2&Prime; to 1&Prime;. The app adds a nut-and-thread allowance based on the diameter and rounds the total up to the next 1/4&Prime;.</p>
+              <p>The last 7 results are saved in the browser with localStorage, and you can delete a result and undo the delete. Every push to main builds and deploys the app to GitHub Pages through a GitHub Actions workflow.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         ABOUT / SKILLS
+         ================================================================ -->
+    <section class="section section--alt" id="about" aria-labelledby="about-title">
+      <div class="container about">
+        <header class="section__header">
+          <p class="section__label" aria-hidden="true">02</p>
+          <h2 class="section__title" id="about-title">About</h2>
+        </header>
+
+        <div class="about__grid">
+          <div class="about__text">
+            <p>I'm a second-year Computer Science (Co-op) student at the University of Guelph. I'm most interested in the part of software people actually touch: interfaces that are fast, accessible and consistent from one screen to the next.</p>
+            <p>Game development is my other interest, and it shapes how I build front-ends. Games live or die on feel: timing, feedback, and small details you notice only when they're missing. I try to bring that same care to UI work.</p>
+
+            <dl class="facts">
+              <div class="facts__row">
+                <dt>School</dt>
+                <dd>University of Guelph, Bachelor of Computing, Computer Science (Co-op)</dd>
+              </div>
+              <div class="facts__row">
+                <dt>Graduating</dt>
+                <dd>April 2030</dd>
+              </div>
+              <div class="facts__row">
+                <dt>Seeking</dt>
+                <dd>Winter 2027 co-op: front-end, UX/UI, design systems</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="inventory" aria-labelledby="skills-title">
+            <h3 class="inventory__title" id="skills-title">Skills <span class="inventory__hint" aria-hidden="true">// inventory</span></h3>
+
+            <h4 class="inventory__group">Languages</h4>
+            <ul class="inventory__slots" role="list">
+              <li class="slot">Java</li>
+              <li class="slot">C</li>
+              <li class="slot">Go</li>
+              <li class="slot">JavaScript</li>
+              <li class="slot">TypeScript</li>
+              <li class="slot">HTML/CSS</li>
+              <li class="slot">68000 Assembly</li>
+            </ul>
+
+            <h4 class="inventory__group">Frameworks</h4>
+            <ul class="inventory__slots" role="list">
+              <li class="slot">React</li>
+              <li class="slot">Next.js</li>
+            </ul>
+
+            <h4 class="inventory__group">Tools</h4>
+            <ul class="inventory__slots" role="list">
+              <li class="slot">Git</li>
+              <li class="slot">GitHub Actions</li>
+              <li class="slot">Docker</li>
+              <li class="slot">Fly.io</li>
+              <li class="slot">VS Code</li>
+              <li class="slot">Claude API</li>
+              <li class="slot">Claude Code</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         CONTACT
+         ================================================================ -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__label" aria-hidden="true">03</p>
+          <h2 class="section__title" id="contact-title">Contact</h2>
+        </header>
+
+        <div class="contact-card">
+          <p class="contact-card__lead">Hiring for Winter 2027? I'm looking for co-op roles in front-end development, UX/UI and design systems. Email is the fastest way to reach me.</p>
+
+          <a class="contact-card__email" href="mailto:rtrapsa@uoguelph.ca">rtrapsa@uoguelph.ca</a>
+
+          <div class="button-row">
+            <a class="button button--primary" href="mailto:rtrapsa@uoguelph.ca">
+              <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
+              Send an email
+            </a>
+            <a class="button" href="resume.pdf" download="Remus_Trapsa_Resume.pdf">
+              <svg class="icon" aria-hidden="true"><use href="#icon-download"></use></svg>
+              Download resume
+            </a>
+            <a class="button" href="https://github.com/RemusTrapsa" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>
+              GitHub<span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+            <!-- TODO(LinkedIn): replace your-handle with your LinkedIn URL -->
+            <a class="button" href="https://www.linkedin.com/in/your-handle/" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#icon-linkedin"></use></svg>
+              LinkedIn<span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>&copy; <span data-year>2026</span> Remus Trapsa. Hand-built with HTML, CSS &amp; a little JavaScript.</p>
+      <a class="site-footer__top" href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
+    </div>
+  </footer>
+</body>
+</html>

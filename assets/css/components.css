@@ -231,60 +231,21 @@
 
 @media (min-width: 56rem){
   .project-card{
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
     gap: var(--space-6);
-    padding: var(--space-5);
+    padding: var(--space-6);
   }
-
-  .project-card__more{
-    grid-column: 1 / -1;
-  }
-}
-
-/* Image slot: shows a pixel-pattern placeholder until a real image exists */
-.project-card__media{
-  position: relative;
-  align-self: start;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background-color: var(--color-bg);
-  background-image:
-    linear-gradient(45deg, var(--color-surface-2) 25%, transparent 25%, transparent 75%, var(--color-surface-2) 75%),
-    linear-gradient(45deg, var(--color-surface-2) 25%, transparent 25%, transparent 75%, var(--color-surface-2) 75%);
-  background-size: 16px 16px;
-  background-position: 0 0, 8px 8px;
-}
-
-.project-card__media::after{
-  content: attr(data-placeholder);
-  position: absolute;
-  inset: 50% auto auto 50%;
-  transform: translate(-50%, -50%);
-  padding: var(--space-1) var(--space-3);
-  background: var(--color-bg);
-  border: 1px solid var(--color-border-strong);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--color-text-subtle);
-  white-space: nowrap;
-}
-
-.project-card__media img{
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top left;
-  color: transparent; /* hide alt text if the file is missing (alt is still read by screen readers) */
 }
 
 .project-card__body{
   display: grid;
   gap: var(--space-4);
   align-content: start;
+}
+
+/* Keep text lines readable now that the card spans the full width */
+.project-card__pitch,
+.project-card__highlights{
+  max-width: 70ch;
 }
 
 .project-card__meta{
